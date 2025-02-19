@@ -1,0 +1,207 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Mohave:ital,wght@0,300..700;1,300..700&family=Playwrite+DE+Grund&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* @media screen and
+navbar{
+    height:
+ }
+ */
+
+.inicio{
+    
+}
+
+.navbarAbsolute{
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    height: 100px;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    z-index: 1000;
+    background-color: #47342396;
+    color: rgb(0, 0, 0);
+}
+
+.navbarAbsoluteContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px 5%;
+    width: 100%;
+}
+
+.first{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../images/pexels-bekirdonmeez-1233258.jpg);
+    background-position: center;
+    background-size: cover;
+    flex-direction: column;
+    height: 95vh;
+    max-height: 900px;
+    color: white;
+}
+
+h1{
+    font-size: 52px;
+    margin: 20px auto;
+    max-width: 90%;
+    text-align: center;
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.212);
+}
+
+.first a{
+    border-radius: 30px;
+    padding: 15px 40px;
+    text-decoration: none;
+    background-color: rgb(0, 182, 0);
+    color: white;
+    filter: drop-shadow(1px 1px 2px rgba(24, 121, 0, 0.699));
+}
+
+.first a:hover{
+    padding: 15px 50px;
+    background-color: rgb(17, 210, 17);
+    transition: padding 0.2s ease-in, background-color 0.3s ease-in
+}
+
+.unidades, .produtos, .feedbacks, .sobre{
+    margin-top: 100px !important;
+}
+
+.unidades{
+    margin: auto;
+    width: 90%;
+    max-width: 1140px;
+}
+
+.lista_unidades{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.lista_unidades a{
+    display: flex;
+    height: 23vh;
+    width: 100%;
+    margin: auto;
+    margin-top: 15px;
+    border-radius: 15px;
+    text-decoration: none;
+    background-color: rgb(255, 181, 43);
+    color: white;
+}
+
+.lista_unidades div{
+    margin-left: 3vw;
+}
+
+.lista_unidades img{
+    margin: 5px;
+    border-radius: 15px;
+}
+
+.unidade_titulo{
+    font-size: 32px;
+}
+
+.ver_unidades, .ver_produtos{
+    background-color: transparent;
+    border: 1px solid #ff7227;
+    border-radius: 999px;
+    box-shadow: 1px 1px 3px rgba(196, 196, 196, 0.318);
+    color: #ff7227;
+    font-size: 16px;
+    margin-top: 10px;
+    width: 250px;
+    height: 60px;
+    cursor: pointer;
+}
+
+.ver_unidades:hover, .ver_produtos:hover{
+    background-color: rgb(231, 150, 0);
+    border: none;
+    transition: background-color 0.2s ease-in-out, color 0.3s ease-in-out;
+    color: white;
+}
+
+.lista_produtos{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0.1px, 1fr));
+    height: 500px;
+    list-style-type: none;
+    margin: auto;
+    max-width: 90%;
+    padding: 0;
+}
+
+.lista_produtos li{
+    border-radius: 15px;
+    margin: 5px;
+}
+
+.lista_produtos p{
+    color: white;
+    text-shadow: 1px 1px 3px rgba(149, 149, 149, 0.182);
+}
+
+.sorvetes{
+    background-color: #E58383;
+}
+
+.picoles{
+    background-color: #69FF8A;
+}
+
+.açai{
+    background-color: #D983E5;
+}
+
+.feedback{
+    margin: auto;
+    height: 400px;
+    max-width: 800px;
+    background-image: url(../images/pexels-teejay-1362534.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.menu{
+    display: none;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    background-color: white;
+    z-index: 1001;
+}
+
+@media screen and (max-width: 900px) {
+    .lista_produtos{
+        grid-template-columns: repeat(2, minmax(0.1px, 1fr));
+        height: 600px;
+    }
+
+    .açai{
+        grid-column: 1/3;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .unidades{
+        margin: auto;
+        max-width: 90%;
+    }
+
+    .lista_produtos li{
+        margin: 3px;
+    }
+}

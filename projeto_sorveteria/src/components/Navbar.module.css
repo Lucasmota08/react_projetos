@@ -1,0 +1,44 @@
+.navbar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  height: 100px;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  z-index: 1000;
+  background-color: #473423;
+  color: rgb(0, 0, 0);
+  position: fixed;
+}
+
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0px 5%;
+  width: 100%;
+}
+
+.Logo{
+    height: 80px;
+    margin: 0 auto;
+    width: 300px;
+    background-color: grey;
+}
+
+.opacity0{
+  opacity: 0;
+}
+
+.menu{
+  color: wheat;
+  cursor: pointer;
+}
+
+.menu:hover{
+  color: rgb(255, 200, 98);
+  transform: scale(1.15);
+  transition: transform 0.3s ease-in-out;
+}

@@ -1,0 +1,12 @@
+.footer{
+    margin: 0px;
+    padding: 10px;
+    background-color: #faf8f7c8;
+    color: rgb(0, 0, 0);
+}
+
+.container{
+    align-items: center;
+    margin: auto;
+    width: 80%;
+}
