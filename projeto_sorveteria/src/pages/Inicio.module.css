@@ -205,3 +205,41 @@ h1{
         margin: 3px;
     }
 }
+
+.loadingScreen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 9999;
+}
+
+.loadingContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sorveteLoader {
+    position: relative;
+    width: 70%;
+    height: auto;
+}
+
+.sorveteLoader img {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: auto;
+}
+
+.loadingText {
+    margin-top: 90%;
+    font-size: 18px;
+    font-weight: bold;
+    color: #D2691E;
+}

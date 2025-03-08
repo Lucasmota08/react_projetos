@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import styles from './Inicio.module.css';
+import sorveteColorido from "../images/sorvete_colorido.png";
+import sorveteLoading from "../images/sorvete_loading.png";
 import unidade from "../images/unidade.png";
 import sorvete from "../images/sorvete_casquinha.png";
 import picole from "../images/picole.png";
@@ -8,20 +10,51 @@ import navbarStyles from '../components/Navbar.module.css';
 import { FiAlignJustify } from "react-icons/fi";
 
 function Inicio() {
+    const [isLoading, setIsLoading] = useState(true);
+    const [progress, setProgress] = useState(0);
     const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
+        // Lógica do Scroll
         const handleScroll = () => {
-            if (window.scrollY > 400) {
-                setIsScrolled(true);
-            } else {
-                setIsScrolled(false);
-            }
+            setIsScrolled(window.scrollY > 400);
         };
-
+    
         window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
+    
+        // Lógica do Carregamento
+        let interval = setInterval(() => {
+            setProgress((prev) => {
+                if (prev >= 100) {
+                    clearInterval(interval);
+                    setTimeout(() => setIsLoading(false), 500); // Dá um tempo antes de sumir
+                    return 100;
+                }
+                return prev + 2; // Velocidade do carregamento
+            });
+        }, 50);
+    
+        // Cleanup: Removendo evento de scroll e limpando o intervalo
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+            clearInterval(interval);
+        };
     }, []);
+
+    if (isLoading) {
+        return (
+            <div className={styles.loadingScreen}>
+                <div className={styles.loadingContainer}>
+                    <div className={styles.sorveteLoader}>
+                        <img src={sorveteColorido} alt="Sorvete" 
+                            style={{ clipPath: `inset(${100 - progress}% 0 0 0)` }} />
+                        <img src={sorveteLoading} alt="Sorvete Preto e Branco" />
+                    </div>
+                    <p className={styles.loadingText}>Projeto em andamento</p>
+                </div>
+            </div>
+        );
+    }
 
     return (
         <div className={styles.inicio}>
