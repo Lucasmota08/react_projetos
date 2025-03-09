@@ -1,3 +1,13 @@
+@keyframes fadeInDown{
+  0%{
+      opacity: 0;
+      transform: translateY(-30px);
+  } 100% {
+      opacity: 1;
+      transform: translateY(0px);
+  }
+}
+
 .navbar{
   display: flex;
   align-items: center;
@@ -11,6 +21,7 @@
   background-color: #473423;
   color: rgb(0, 0, 0);
   position: fixed;
+  animation: fadeInDown 0.3s ease;
 }
 
 .container{

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import styles from './Inicio.module.css';
-import sorveteColorido from "../images/sorvete_colorido.png";
-import sorveteLoading from "../images/sorvete_loading.png";
+import sorveteLoading from "../images/sorveteLoading.png";
+import sorveteColorido from "../images/sorveteLoaded.png";
 import unidade from "../images/unidade.png";
 import sorvete from "../images/sorvete_casquinha.png";
 import picole from "../images/picole.png";
@@ -71,6 +71,7 @@ function Inicio() {
                 </div>
             )}
 
+            {/* navbar para a página Inicio */}
             <section className={styles.first}>
                 <div className={styles.navbarAbsolute}>
                     <div className={styles.navbarAbsoluteContainer}>
