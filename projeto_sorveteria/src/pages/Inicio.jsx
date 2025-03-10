@@ -44,20 +44,20 @@ function Inicio() {
     }, []);
 
     // Tela de carregamento
-    // if (isLoading) {
-    //     return (
-    //         <div className={styles.loadingScreen}>
-    //             <div className={styles.loadingContainer}>
-    //                 <div className={styles.sorveteLoader}>
-    //                     <img src={sorveteColorido} alt="Sorvete" 
-    //                         style={{ clipPath: `inset(${100 - progress}% 0 0 0)` }} />
-    //                     <img src={sorveteLoading} alt="Sorvete Preto e Branco" />
-    //                 </div>
-    //                 <p className={styles.loadingText}>Projeto em andamento</p>
-    //             </div>
-    //         </div>
-    //     );
-    // }
+    if (isLoading) {
+        return (
+            <div className={styles.loadingScreen}>
+                <div className={styles.loadingContainer}>
+                    <div className={styles.sorveteLoader}>
+                        <img src={sorveteColorido} alt="Sorvete" 
+                            style={{ clipPath: `inset(${100 - progress}% 0 0 0)` }} />
+                        <img src={sorveteLoading} alt="Sorvete Preto e Branco" />
+                    </div>
+                    <p className={styles.loadingText}>Projeto em andamento</p>
+                </div>
+            </div>
+        );
+    }
 
     function showMenu() {
         if (isActive) {
