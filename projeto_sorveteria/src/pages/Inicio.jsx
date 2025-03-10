@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import styles from './Inicio.module.css';
 import sorveteLoading from "../images/sorveteLoading.png";
-import sorveteColorido from "../images/sorveteLoaded.png";
+import sorveteColorido from "../images/sorveteLoaded_chocolate.png";
 import unidade from "../images/unidade.png";
 import sorvete from "../images/sorvete_casquinha.png";
 import picole from "../images/picole.png";
@@ -13,6 +13,8 @@ function Inicio() {
     const [isLoading, setIsLoading] = useState(true);
     const [progress, setProgress] = useState(0);
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isActive, setIsActive] = useState(false);
+    const [isExiting, setIsExiting] = useState(false);
 
     useEffect(() => {
         // Lógica do Scroll
@@ -27,10 +29,10 @@ function Inicio() {
             setProgress((prev) => {
                 if (prev >= 100) {
                     clearInterval(interval);
-                    setTimeout(() => setIsLoading(false), 500); // Dá um tempo antes de sumir
+                    setTimeout(() => setIsLoading(false), 500);
                     return 100;
                 }
-                return prev + 2; // Velocidade do carregamento
+                return prev + 2;
             });
         }, 50);
     
@@ -41,21 +43,34 @@ function Inicio() {
         };
     }, []);
 
-    if (isLoading) {
-        return (
-            <div className={styles.loadingScreen}>
-                <div className={styles.loadingContainer}>
-                    <div className={styles.sorveteLoader}>
-                        <img src={sorveteColorido} alt="Sorvete" 
-                            style={{ clipPath: `inset(${100 - progress}% 0 0 0)` }} />
-                        <img src={sorveteLoading} alt="Sorvete Preto e Branco" />
-                    </div>
-                    <p className={styles.loadingText}>Projeto em andamento</p>
-                </div>
-            </div>
-        );
-    }
+    // Tela de carregamento
+    // if (isLoading) {
+    //     return (
+    //         <div className={styles.loadingScreen}>
+    //             <div className={styles.loadingContainer}>
+    //                 <div className={styles.sorveteLoader}>
+    //                     <img src={sorveteColorido} alt="Sorvete" 
+    //                         style={{ clipPath: `inset(${100 - progress}% 0 0 0)` }} />
+    //                     <img src={sorveteLoading} alt="Sorvete Preto e Branco" />
+    //                 </div>
+    //                 <p className={styles.loadingText}>Projeto em andamento</p>
+    //             </div>
+    //         </div>
+    //     );
+    // }
 
+    function showMenu() {
+        if (isActive) {
+            setIsExiting(true);
+            setTimeout(() => {
+                setIsActive(false);
+                setIsExiting(false);
+            }, 500);
+        } else {
+            setIsActive(true);
+        }
+    }    
+      
     return (
         <div className={styles.inicio}>
 
@@ -71,6 +86,19 @@ function Inicio() {
                 </div>
             )}
 
+            {/*  menu de opções */}
+            <div className={`${styles.showMenu} ${isActive ? styles.active : ""} ${isExiting ? styles.exiting : ""}`}>
+                <FiAlignJustify onClick={showMenu} className={styles.menuIcon}/>
+                <ul>
+                    <li className={styles.greenLi}>Peça já</li>
+                    <li>Sobre nós</li>
+                    <li>Produtos</li>
+                    <li>Unidades</li>
+                    <li>Seja um parceiro</li>
+                    <li>Políticas de privacidade</li>
+                </ul>
+            </div>
+
             {/* navbar para a página Inicio */}
             <section className={styles.first}>
                 <div className={styles.navbarAbsolute}>
@@ -79,7 +107,7 @@ function Inicio() {
                         <div className={navbarStyles.Logo}>
                             <img src="" alt="" />
                         </div>
-                        <FiAlignJustify className={navbarStyles.menu}/>
+                        <FiAlignJustify onClick={showMenu} className={navbarStyles.menu}/>
                     </div>
                 </div>
                 <h1>"O melhor sorvete do país"</h1>

@@ -6,6 +6,50 @@ navbar{
     height:
  }
  */
+ 
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown2 {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown3 {
+    from {
+        opacity: 0;
+        transform: translateY(-95vh);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-95vh);
+    }
+}
 
 .inicio{
     
@@ -59,6 +103,7 @@ h1{
     max-width: 90%;
     text-align: center;
     text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.212);
+    animation: fadeInDown2 1s ease;
 }
 
 .first a{
@@ -68,6 +113,7 @@ h1{
     background-color: rgb(0, 182, 0);
     color: white;
     filter: drop-shadow(1px 1px 2px rgba(24, 121, 0, 0.699));
+    animation: fadeInDown2 1s ease;
 }
 
 .first a:hover{
@@ -193,6 +239,78 @@ h1{
     z-index: 1001;
 }
 
+/*
+
+
+div menu*/
+.showMenu {
+    display: none;
+    opacity: 0;
+}
+
+.showMenu.active{
+    display: flex;
+    position: fixed;
+    align-items: center;
+    animation: fadeInDown3 0.4s ease-in-out forwards;
+    flex-direction: column;
+    height: 100%;
+    justify-content: start;
+    width: 100%;
+    z-index: 9998;
+    background-color: white;
+}
+
+.menuIcon{
+    cursor: pointer;
+    font-size: 40px;
+    color: rgb(0, 0, 0);
+
+}
+  
+.menuIcon:hover{
+    color: rgb(57, 57, 57);
+    transform: scale(1.15);
+    transition: transform 0.3s ease-in-out;
+}
+
+.showMenu.active ul{
+    list-style-type: none;
+    padding: 0;
+}
+  
+.showMenu.active li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 999px;
+    cursor: pointer;
+    height: 70px;
+    margin-top: 10px;
+    width: 400px;
+    max-width: 90vw;
+    text-align: center;
+}
+
+.showMenu.active li:hover{
+    transform: scale(1.02);
+    transition: transform 0.2s ease;
+}
+
+.showMenu.active li:active{
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+}
+
+.showMenu.exiting {
+    animation: fadeInUp 0.4s ease-in-out forwards;
+}
+
+.greenLi{
+    background-color: rgb(90, 255, 90);
+}
+
 @media screen and (max-width: 900px) {
     .lista_produtos{
         grid-template-columns: repeat(2, minmax(0.1px, 1fr));
@@ -215,17 +333,10 @@ h1{
     }
 }
 
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+/* 
 
+
+Loading screen */
 .loadingScreen {
     position: fixed;
     width: 100%;
