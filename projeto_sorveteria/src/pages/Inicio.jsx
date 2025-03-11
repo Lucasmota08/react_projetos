@@ -60,17 +60,20 @@ function Inicio() {
     }
 
     function showMenu() {
+        console.log("Antes do clique:", isActive);
         if (isActive) {
             setIsExiting(true);
             setTimeout(() => {
                 setIsActive(false);
                 setIsExiting(false);
+                console.log("Menu fechado");
             }, 500);
         } else {
             setIsActive(true);
+            console.log("Menu aberto");
         }
-    }    
-      
+    }
+     
     return (
         <div className={styles.inicio}>
 
@@ -81,7 +84,7 @@ function Inicio() {
                         <div className={navbarStyles.Logo}>
                             <img src="" alt="" />
                         </div>
-                        <FiAlignJustify className={navbarStyles.menu}/>
+                        <FiAlignJustify onClick={showMenu} className={navbarStyles.menu}/>
                     </div>
                 </div>
             )}
@@ -110,7 +113,7 @@ function Inicio() {
                         <FiAlignJustify onClick={showMenu} className={navbarStyles.menu}/>
                     </div>
                 </div>
-                <h1>"O melhor sorvete do país"</h1>
+                <h1>&#34;O melhor sorvete do país&#34;</h1>
                 <a href="">Peça já</a>
             </section>
 
