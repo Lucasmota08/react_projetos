@@ -41,6 +41,27 @@
   }
 }
 
+@keyframes fadeInLeft{
+    0%{
+        opacity: 0;
+        transform: translateX(95vw);
+    } 100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes fadeInRight{
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(95vw);
+    }
+}
+
 
 .navbar{
   display: flex;
@@ -157,4 +178,14 @@ div menu*/
 
 .greenLi{
     background-color: rgb(90, 255, 90);
+}
+
+@media screen and (max-width: 1025px) {
+    .showMenu.active{
+        animation: fadeInLeft 0.4s ease-in-out forwards;
+    }
+
+    .showMenu.exiting {
+        animation: fadeInRight 0.4s ease-in-out forwards;
+    }
 }

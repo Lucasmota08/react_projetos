@@ -17,6 +17,18 @@ function Navbar() {
             setIsActive(true);
         }
     }    
+    //Esconder o scroll quando a div menu opçoes aparece
+    useEffect(() => {
+        if (isActive) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "auto";
+        }
+        
+        return () => {
+            document.body.style.overflow = "auto";
+        };
+        }, [isActive]);
 
     return(
         <div className={navbarStyles.navbar}>

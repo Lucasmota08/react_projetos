@@ -3,9 +3,10 @@ import styles from './Inicio.module.css';
 import sorveteLoading from "../images/sorveteLoading.png";
 import sorveteColorido from "../images/sorveteLoaded_chocolate.png";
 import unidade from "../images/unidade.png";
-import sorvete from "../images/sorvete_casquinha.png";
-import picole from "../images/picole.png";
-import açai from "../images/açai.png";
+
+import sorvete from "../images/images_3.png";
+import picole from "../images/images_2.png";
+import açai from "../images/images_1.png";
 import navbarStyles from '../components/Navbar.module.css';
 import { FiAlignJustify } from "react-icons/fi";
 
@@ -43,6 +44,19 @@ function Inicio() {
         };
     }, []);
 
+    //Esconder o scroll quando a div menu opçoes aparece
+    useEffect(() => {
+        if (isActive) {
+          document.body.style.overflow = "hidden";
+        } else {
+          document.body.style.overflow = "auto";
+        }
+      
+        return () => {
+          document.body.style.overflow = "auto";
+        };
+      }, [isActive]);
+
     // Tela de carregamento
     if (isLoading) {
         return (
@@ -77,6 +91,7 @@ function Inicio() {
     return (
         <div className={styles.inicio}>
 
+            {/* Navbar depois de scrollar */}
             {isScrolled && (
                 <div className={navbarStyles.navbar}>
                     <div className={navbarStyles.container}>

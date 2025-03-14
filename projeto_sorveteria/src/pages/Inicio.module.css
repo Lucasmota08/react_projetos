@@ -51,6 +51,27 @@ navbar{
     }
 }
 
+@keyframes fadeInLeft{
+    0%{
+        opacity: 0;
+        transform: translateX(95vw);
+    } 100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes fadeInRight{
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(95vw);
+    }
+}
+
 .inicio{
     
 }
@@ -134,7 +155,7 @@ h1{
 .unidades{
     margin: auto;
     width: 90%;
-    max-width: 1140px;
+    max-width: 1040px;
 }
 
 .lista_unidades{
@@ -145,7 +166,7 @@ h1{
 
 .lista_unidades a{
     display: flex;
-    height: 23vh;
+    height: 20vh;
     width: 100%;
     margin: auto;
     margin-top: 15px;
@@ -165,7 +186,7 @@ h1{
 }
 
 .unidade_titulo{
-    font-size: 32px;
+    font-size: 28px;
 }
 
 .ver_unidades, .ver_produtos{
@@ -188,12 +209,16 @@ h1{
     color: white;
 }
 
+.produtos{
+    display: block;
+    height: auto;
+}
+
 .lista_produtos{
     display: grid;
     grid-template-columns: repeat(3, minmax(0.1px, 1fr));
-    height: 500px;
     list-style-type: none;
-    margin: auto;
+    margin: 10px auto;
     max-width: 90%;
     padding: 0;
 }
@@ -201,6 +226,20 @@ h1{
 .lista_produtos li{
     border-radius: 15px;
     margin: 5px;
+    height: 300px;
+    max-height: 100%;
+}
+
+.lista_produtos > li > img{
+    filter: drop-shadow(1px 1px 5px rgba(58, 58, 58, 0.699));
+    max-height: 75%;
+    max-width: 95%;
+    cursor: pointer;
+}
+
+.lista_produtos > li > img:hover{
+    transform: scale(1.04);
+    transition: transform 1s ease;
 }
 
 .lista_produtos p{
@@ -382,4 +421,14 @@ Loading screen */
 
 .sorveteLoader img, .loadingText {
     animation: fadeInDown 0.8s ease-out;
+}
+
+@media screen and (max-width: 1025px) {
+    .showMenu.active{
+        animation: fadeInLeft 0.4s ease-in-out forwards;
+    }
+
+    .showMenu.exiting {
+        animation: fadeInRight 0.4s ease-in-out forwards;
+    }
 }
