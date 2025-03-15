@@ -83,8 +83,20 @@ function Inicio() {
                 <div className={navbarStyles.navbar}>
                     <div className={navbarStyles.container}>
                         <FiAlignJustify className={navbarStyles.opacity0}/>
-                        <div className={navbarStyles.Logo}>
-                            <img src="" alt="" />
+                        <div className={navbarStyles.meio}>
+                            <div className={navbarStyles.Logo}>
+                                <img src="" alt="" />
+                            </div>
+                            <div className={navbarStyles.opcoes}>
+                                <ul>
+                                    <li><a href="">Peça já</a></li>
+                                    <li><a href="">Sobre nós</a></li>
+                                    <li><a href="">Produtos</a></li>
+                                    <li><a href="">Unidades</a></li>
+                                    <li><a href="">Seja um parceiro</a></li>
+                                    <li><a href="">Políticas de Privacidade</a></li>
+                                </ul>
+                            </div>
                         </div>
                         <FiAlignJustify onClick={showMenu} className={navbarStyles.menu}/>
                     </div>
@@ -95,12 +107,12 @@ function Inicio() {
             <div className={`${styles.showMenu} ${isActive ? styles.active : ""} ${isExiting ? styles.exiting : ""}`}>
                 <FiAlignJustify onClick={showMenu} className={styles.menuIcon}/>
                 <ul>
-                    <li className={styles.greenLi}>Peça já</li>
-                    <li>Sobre nós</li>
-                    <li>Produtos</li>
-                    <li>Unidades</li>
-                    <li>Seja um parceiro</li>
-                    <li>Políticas de privacidade</li>
+                    <li className={navbarStyles.greenLi}><a href="">Peça já</a></li>
+                    <li><a href="">Sobre nós</a></li>
+                    <li><a href="">Produtos</a></li>
+                    <li><a href="">Unidades</a></li>
+                    <li><a href="">Seja um parceiro</a></li>
+                    <li><a href="">Políticas de Privacidade</a></li>
                 </ul>
             </div>
 
@@ -109,8 +121,20 @@ function Inicio() {
                 <div className={styles.navbarAbsolute}>
                     <div className={styles.navbarAbsoluteContainer}>
                         <FiAlignJustify className={navbarStyles.opacity0}/>
-                        <div className={navbarStyles.Logo}>
-                            <img src="" alt="" />
+                        <div className={navbarStyles.meio}>
+                            <div className={navbarStyles.Logo}>
+                                <img src="" alt="" />
+                            </div>
+                            <div className={navbarStyles.opcoes}>
+                                <ul>
+                                    <li><a href="">Peça já</a></li>
+                                    <li><a href="">Sobre nós</a></li>
+                                    <li><a href="">Produtos</a></li>
+                                    <li><a href="">Unidades</a></li>
+                                    <li><a href="">Seja um parceiro</a></li>
+                                    <li><a href="">Políticas de Privacidade</a></li>
+                                </ul>
+                            </div>
                         </div>
                         <FiAlignJustify onClick={showMenu} className={navbarStyles.menu}/>
                     </div>

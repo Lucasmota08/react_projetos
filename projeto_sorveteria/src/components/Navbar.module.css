@@ -73,7 +73,7 @@
   padding: 0px;
   width: 100%;
   z-index: 1000;
-  background-color: #473423;
+  background-color: rgb(71, 52, 35);
   color: rgb(0, 0, 0);
   position: fixed;
   animation: fadeInDown 0.3s ease;
@@ -81,10 +81,18 @@
 
 .container{
   display: flex;
+  height: 100%;
   align-items: center;
   justify-content: space-between;
   margin: 0px 5%;
   width: 100%;
+}
+
+.meio{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
 }
 
 .Logo{
@@ -109,6 +117,54 @@
   transition: transform 0.3s ease-in-out;
 }
 
+@media screen and (max-width: 1300px) {
+    .opcoes{
+        display: none;
+    }
+}
+
+.opcoes{
+    height: 100%;
+}
+
+.opcoes ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 16px;
+    height: 100%;
+    margin: 0;
+}
+
+.opcoes ul li{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 5px 10px;
+    position: relative;
+    text-shadow: 1px 1px 3px rgb(71, 52, 35);
+}
+
+.opcoes ul li a{
+    color: wheat;
+    text-decoration: none;
+}
+
+.opcoes ul li::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0%;
+    height: 3px;
+    background: rgb(158, 88, 26);
+    transition: width 0.3s ease, left 0.3s ease;
+}
+  
+.opcoes ul li:hover::after {
+    width: 100%;
+    left: 0;
+}
 /*
 
 

@@ -22,8 +22,20 @@ function Navbar() {
         <div className={navbarStyles.navbar}>
             <div className={navbarStyles.container}>
                 <FiAlignJustify className={navbarStyles.opacity0}/>
-                <div className={navbarStyles.Logo}>
-                    <img src="" alt="" />
+                <div className={navbarStyles.meio}>
+                    <div className={navbarStyles.Logo}>
+                        <img src="" alt="" />
+                    </div>
+                    <div className={navbarStyles.opcoes}>
+                        <ul>
+                            <li><a href="">Peça já</a></li>
+                            <li><a href="">Sobre nós</a></li>
+                            <li><a href="">Produtos</a></li>
+                            <li><a href="">Unidades</a></li>
+                            <li><a href="">Seja um parceiro</a></li>
+                            <li><a href="">Políticas de Privacidade</a></li>
+                        </ul>
+                    </div>
                 </div>
                 <FiAlignJustify onClick={showMenu} className={navbarStyles.menu}/>
             </div>
