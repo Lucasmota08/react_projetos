@@ -54,7 +54,7 @@ function Inicio() {
                             style={{ clipPath: `inset(${100 - progress}% 0 0 0)` }} />
                         <img src={sorveteLoading} alt="Sorvete Preto e Branco" />
                     </div>
-                    <p className={styles.loadingText}>Projeto em andamento</p>
+                    <p className={styles.loadingText}>Projeto em desenvolvimento</p>
                 </div>
             </div>
         );
@@ -82,7 +82,7 @@ function Inicio() {
             {isScrolled && (
                 <div className={navbarStyles.navbar}>
                     <div className={navbarStyles.container}>
-                        <FiAlignJustify className={navbarStyles.opacity0}/>
+                        <FiAlignJustify onClick={showMenu} className={navbarStyles.menu}/>
                         <div className={navbarStyles.meio}>
                             <div className={navbarStyles.Logo}>
                                 <img src="" alt="" />
@@ -98,7 +98,7 @@ function Inicio() {
                                 </ul>
                             </div>
                         </div>
-                        <FiAlignJustify onClick={showMenu} className={navbarStyles.menu}/>
+                        <FiAlignJustify className={navbarStyles.opacity0}/>
                     </div>
                 </div>
             )}
@@ -120,7 +120,7 @@ function Inicio() {
             <section className={styles.first}>
                 <div className={styles.navbarAbsolute}>
                     <div className={styles.navbarAbsoluteContainer}>
-                        <FiAlignJustify className={navbarStyles.opacity0}/>
+                        <FiAlignJustify onClick={showMenu} className={navbarStyles.menu}/>
                         <div className={navbarStyles.meio}>
                             <div className={navbarStyles.Logo}>
                                 <img src="" alt="" />
@@ -136,7 +136,7 @@ function Inicio() {
                                 </ul>
                             </div>
                         </div>
-                        <FiAlignJustify onClick={showMenu} className={navbarStyles.menu}/>
+                        <FiAlignJustify className={navbarStyles.opacity0}/>
                     </div>
                 </div>
                 <h1>&#34;O melhor sorvete do país&#34;</h1>
@@ -169,7 +169,7 @@ function Inicio() {
                         </a></li>
                 </ul>
                 <button className={styles.ver_unidades}>
-                    <p>Ver todas as unidades</p>
+                    <p><strong>Ver todas as unidades</strong></p>
                 </button>
             </section>
 
@@ -187,7 +187,7 @@ function Inicio() {
                         <img src={açai} alt="" /></li>
                 </ul>
                 <button className={styles.ver_produtos}>
-                    <p>Ver todos os produtos</p>
+                    <p><strong>Ver todos os produtos</strong></p>
                 </button>
             </section>
 

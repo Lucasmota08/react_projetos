@@ -1,12 +1,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Mohave:ital,wght@0,300..700;1,300..700&family=Playwrite+DE+Grund&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/* @media screen and
-navbar{
-    height:
- }
- */
- 
+/* ========================================
+   KEYFRAMES
+======================================== */
+
 @keyframes fadeInDown {
     from {
         opacity: 0;
@@ -51,17 +49,29 @@ navbar{
     }
 }
 
-@keyframes fadeInLeft{
-    0%{
+@keyframes fadeInLeftMenu {
+    0% {
         opacity: 0;
-        transform: translateX(200px);
-    } 100% {
+        transform: translateX(-5vw);
+    }
+    100% {
         opacity: 1;
-        transform: translateX(0px);
+        transform: translateX(0vw);
     }
 }
 
-@keyframes fadeInRight{
+@keyframes fadeInRightMenu {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-20vw);
+    }
+}
+
+@keyframes fadeInRight {
     from {
         opacity: 1;
         transform: translateX(0);
@@ -72,149 +82,161 @@ navbar{
     }
 }
 
-.inicio{
-    
+/* ========================================
+   GENERAL CLASSES
+======================================== */
+
+.inicio {
+    /* Empty for now */
 }
 
-section > p{
+section > p {
     font-size: 20px;
 }
 
-.first{
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* ========================================
+   FIRST SECTION (Hero)
+======================================== */
+
+.first {
     background-image: url(../images/pexels-bekirdonmeez-1233258.jpg);
     background-position: center;
     background-size: cover;
+    color: white;
+    display: flex;
+    align-items: center;
     flex-direction: column;
     height: 95vh;
+    justify-content: center;
     max-height: 900px;
-    color: white;
+    position: relative;
 }
 
-.navbarAbsolute{
-    position: absolute;
-    top: 0;
-    display: flex;
+.navbarAbsolute {
     align-items: center;
-    justify-content: center;
-    font-size: 30px;
-    height: 90px;
-    margin: 0px;
-    padding: 0px;
-    width: 100%;
-    z-index: 1000;
     background-color: #47342396;
     color: rgb(0, 0, 0);
+    display: flex;
+    font-size: 30px;
+    height: 90px;
+    justify-content: center;
+    margin: 0px;
+    padding: 0px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
-.navbarAbsoluteContainer{
-    display: flex;
+.navbarAbsoluteContainer {
     align-items: center;
+    display: flex;
     justify-content: space-between;
     margin: 0px 5%;
     width: 100%;
 }
 
-h1{
+h1 {
+    animation: fadeInDown2 1s ease;
     font-size: 52px;
     margin: 20px auto;
     max-width: 90%;
     text-align: center;
     text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.212);
-    animation: fadeInDown2 1s ease;
 }
 
-.first > a{
-    border-radius: 30px;
-    padding: 15px 40px;
-    text-decoration: none;
+.first > a {
+    animation: fadeInDown2 1s ease;
     background-color: rgb(0, 182, 0);
+    border-radius: 30px;
     color: white;
     filter: drop-shadow(1px 1px 2px rgba(24, 121, 0, 0.699));
-    animation: fadeInDown2 1s ease;
+    padding: 15px 40px;
+    text-decoration: none;
 }
 
-.first > a:hover{
-    padding: 15px 50px;
+.first > a:hover {
     background-color: rgb(17, 210, 17);
-    transition: padding 0.2s ease-in, background-color 0.3s ease-in
+    padding: 15px 50px;
+    transition: padding 0.2s ease-in, background-color 0.3s ease-in;
 }
 
-.first > a:active{
+.first > a:active {
     background-color: rgb(81, 197, 81);
-    transition: background-color 0s ease-in
+    transition: background-color 0s ease-in;
 }
 
-.unidades, .produtos, .feedbacks, .sobre{
+/* ========================================
+   CONTENT SECTIONS
+======================================== */
+
+.unidades, .produtos, .feedbacks, .sobre {
     margin-top: 100px !important;
 }
 
-.unidades{
+.unidades {
     margin: auto;
-    width: 90%;
     max-width: 1040px;
+    width: 90%;
 }
 
-.lista_unidades{
+.lista_unidades {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-.lista_unidades a{
+.lista_unidades a {
+    background-color: rgb(255, 181, 43);
+    border-radius: 15px;
+    color: white;
     display: flex;
     height: 20vh;
-    width: 100%;
     margin: auto;
     margin-top: 15px;
-    border-radius: 15px;
     text-decoration: none;
-    background-color: rgb(255, 181, 43);
-    color: white;
+    width: 100%;
 }
 
-.lista_unidades div{
+.lista_unidades div {
     margin-left: 3vw;
 }
 
-.lista_unidades img{
-    margin: 5px;
+.lista_unidades img {
     border-radius: 15px;
+    margin: 5px;
 }
 
-.unidade_titulo{
+.unidade_titulo {
     font-size: 28px;
 }
 
-.ver_unidades, .ver_produtos{
+.ver_unidades, .ver_produtos {
     background-color: transparent;
     border: 1px solid #ff7227;
     border-radius: 999px;
     box-shadow: 1px 1px 3px rgba(196, 196, 196, 0.318);
     color: #ff7227;
+    cursor: pointer;
     font-size: 16px;
+    height: 60px;
     margin-top: 10px;
     width: 250px;
-    height: 60px;
-    cursor: pointer;
 }
 
-.ver_unidades:hover, .ver_produtos:hover{
+.ver_unidades:hover, .ver_produtos:hover {
     background-color: rgb(231, 150, 0);
     border: none;
-    transition: background-color 0.2s ease-in-out, color 0.3s ease-in-out;
     color: white;
+    transition: background-color 0.2s ease-in-out, color 0.3s ease-in-out;
 }
 
-.produtos{
+.produtos {
     display: block;
     height: auto;
 }
 
-.lista_produtos{
+.lista_produtos {
     display: grid;
     grid-template-columns: repeat(3, minmax(0.1px, 1fr));
     list-style-type: none;
@@ -223,203 +245,210 @@ h1{
     padding: 0;
 }
 
-.lista_produtos li{
+.lista_produtos li {
     border-radius: 15px;
-    margin: 5px;
     height: 300px;
+    margin: 5px;
     max-height: 100%;
 }
 
-.lista_produtos > li > img{
+.lista_produtos > li > img {
+    cursor: pointer;
     filter: drop-shadow(1px 1px 5px rgba(58, 58, 58, 0.699));
     max-height: 75%;
     max-width: 95%;
-    cursor: pointer;
 }
 
-.lista_produtos > li > img:hover{
+.lista_produtos > li > img:hover {
     transform: scale(1.04);
     transition: transform 1s ease;
 }
 
-.lista_produtos p{
+.lista_produtos p {
     color: white;
     text-shadow: 1px 1px 3px rgba(149, 149, 149, 0.182);
 }
 
-.sorvetes{
+.sorvetes {
     background-color: #E58383;
 }
 
-.picoles{
+.picoles {
     background-color: #69FF8A;
 }
 
-.açai{
+.açai {
     background-color: #D983E5;
 }
 
-.feedback{
-    margin: auto;
-    height: 400px;
-    max-width: 800px;
+.feedback {
     background-image: url(../images/pexels-teejay-1362534.jpg);
     background-position: center;
     background-size: cover;
+    height: 400px;
+    margin: auto;
+    max-width: 800px;
 }
 
-.menu{
+/* ========================================
+   MOBILE MENU
+======================================== */
+
+.menu {
+    background-color: white;
     display: none;
     height: 100vh;
     position: fixed;
     top: 0;
     width: 100vw;
-    background-color: white;
     z-index: 1001;
 }
 
-/*
-
-
-div menu*/
 .showMenu {
     display: none;
     opacity: 0;
 }
 
-.showMenu.active{
-    display: flex;
-    position: fixed;
+.showMenu.active {
     align-items: center;
-    animation: fadeInLeft 0.2s ease-in-out forwards;
+    animation: fadeInLeftMenu 0.3s ease-in-out forwards;
+    background-color: white;
+    display: flex;
     flex-direction: column;
     height: 100%;
     justify-content: start;
+    left: 0;
+    position: fixed;
     width: 400px;
-    max-width: 70%;
-    right: 0;
     z-index: 9998;
-    background-color: white;
 }
 
-.menuIcon{
+.showMenu.exiting {
+    animation: fadeInRightMenu 0.3s ease-in-out forwards;
+}
+
+.menuIcon {
+    color: rgb(0, 0, 0);
     cursor: pointer;
     font-size: 40px;
-    color: rgb(0, 0, 0);
-
 }
-  
-.menuIcon:hover{
+
+.menuIcon:hover {
     color: rgb(57, 57, 57);
     transform: scale(1.15);
     transition: transform 0.3s ease-in-out;
 }
 
-.showMenu.active ul{
+.showMenu.active ul {
     list-style-type: none;
     padding: 0;
     width: 90%;
 }
-  
-.showMenu.active li{
-    display: flex;
+
+.showMenu.active li {
     align-items: center;
-    justify-content: center;
     border: 2px solid rgb(170, 170, 170);
     border-radius: 999px;
     cursor: pointer;
+    display: flex;
     height: 70px;
+    justify-content: center;
     margin-top: 10px;
-    width: 100%;
     max-width: 90vw;
     text-align: center;
+    width: 100%;
 }
 
-.showMenu.active li:hover{
+.showMenu.active li:hover {
     transform: scale(1.02);
     transition: transform 0.2s ease;
 }
 
-.showMenu.active li:active{
+.showMenu.active li:active {
     transform: scale(0.98);
     transition: transform 0.1s ease;
 }
 
-.showMenu.exiting {
-    animation: fadeInRight 0.2s ease-in-out forwards;
-}
-
-.showMenu ul li a{
+.showMenu ul li a {
     color: black;
     text-decoration: none;
 }
-/*
 
+/* ========================================
+   MEDIA QUERIES
+======================================== */
 
-media screen*/
 @media screen and (max-width: 900px) {
-    .lista_produtos{
+    .lista_produtos {
         grid-template-columns: repeat(2, minmax(0.1px, 1fr));
         height: 600px;
     }
 
-    .açai{
+    .açai {
         grid-column: 1/3;
     }
 }
 
+@media screen and (max-width: 768px) {
+    .showMenu.active {
+        animation: fadeInLeftMenu 0.3s ease-in-out;
+        opacity: 0.98;
+        width: 100%;
+    }
+}
+
 @media screen and (max-width: 720px) {
-    .unidades{
+    .unidades {
         margin: auto;
         max-width: 90%;
     }
 
-    .lista_produtos li{
+    .lista_produtos li {
         margin: 3px;
     }
 }
 
-/* 
+/* ========================================
+   LOADING SCREEN
+======================================== */
 
-
-Loading screen */
 .loadingScreen {
-    position: fixed;
-    width: 100%;
-    height: 100%;
+    align-items: center;
     background: linear-gradient(115deg, #fff5b8, #fffef5, #fffef5, #fff5b8);
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
     z-index: 9999;
 }
 
 .loadingContainer {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 .sorveteLoader {
+    height: auto;
     position: relative;
     top: -50%;
     transform: translate(-50%);
     width: 85%;
-    height: auto;
 }
 
 .sorveteLoader img {
+    height: auto;
     position: absolute;
     width: 100%;
-    height: auto;
 }
 
 .loadingText {
-    margin-top: 50%;
+    color: #D2691E;
     font-size: 18px;
     font-weight: bold;
-    color: #D2691E;
+    margin-top: 50%;
 }
 
 .sorveteLoader img, .loadingText {

@@ -4,10 +4,23 @@ function Footer() {
     return(
         <div className={styles.footer}>
             <div className={styles.container}>
-                <h1>Olá Footer</h1>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non provident itaque amet praesentium rem cupiditate, omnis, molestiae fugiat explicabo nisi quas officiis ipsa. Inventore nemo amet commodi temporibus nisi minima.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A quia sequi expedita, aliquam quas quo blanditiis laudantium repudiandae eum perspiciatis provident impedit saepe repellat? Omnis at dolorum iure harum eaque.</p>
+                <img src="" alt="" />
+                <div className='navegacao'>
+                    <a>Peça já</a>
+                    <a>Sobre nós</a>
+                    <a>Produtos</a>
+                    <a>Unidades</a>
+                    <a>Seja um parceiro</a>
+                    <a>Políticas de Privacidade</a>
+                </div>
+                <div>
+
+                </div>
+                <div>
+
+                </div>
             </div>
+                <p>2026 | Feito por <a href="https://github.com/lucasmota08" target="_blank" rel="noopener noreferrer">Lucas Mota</a></p>
         </div>
     )
 }
