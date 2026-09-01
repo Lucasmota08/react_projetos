@@ -10,6 +10,10 @@ import picole from "../images/images_2.png";
 import açai from "../images/images_1.png";
 import navbarStyles from '../components/Navbar.module.css';
 import { FiAlignJustify } from "react-icons/fi";
+import { FiMapPin } from "react-icons/fi";
+import { FiShoppingBag } from "react-icons/fi";
+import { FiFeather } from "react-icons/fi";
+import { LuBuilding } from "react-icons/lu";
 
 function Inicio() {
     const [isLoading, setIsLoading] = useState(true);
@@ -152,28 +156,36 @@ function Inicio() {
                 </div>
             </section>
 
+            {/* Onde encontrar? unidades lista_unidades unidade_titulo ver_unidades */}
             <section className={styles.unidades}>
+                <FiMapPin className={styles.meuIcone} />
                 <p>Onde encontrar?</p>
                 <ul className={styles.lista_unidades}>
                     <li><a href="">
-                        <img src={unidade} alt="" />
-                        <div>
+                        <FiShoppingBag className={styles.unidadeA} />
+                        <div className={styles.textoUnidade}>
                             <p className={styles.unidade_titulo}>Unidade A</p>
                             <p>Endereço</p>
+                            <div className={styles.barraOculta}></div>
+                            <p className={styles.horario}>Horário</p>
                         </div>
                         </a></li>
                     <li><a href="">
-                        <img src={unidade} alt="" />
-                        <div>
-                            <p className={styles.unidade_titulo}>Unidade A</p>
+                        <LuBuilding className={styles.unidadeB} />
+                        <div className={styles.textoUnidade}>
+                            <p className={styles.unidade_titulo}>Unidade B</p>
                             <p>Endereço</p>
+                            <div className={styles.barraOculta}></div>
+                            <p className={styles.horario}>Horário</p>
                         </div>
                         </a></li>
                     <li><a href="">
-                        <img src={unidade} alt="" />
-                        <div>
-                            <p className={styles.unidade_titulo}>Unidade A</p>
+                        <FiFeather className={styles.unidadeC} />
+                        <div className={styles.textoUnidade}>
+                            <p className={styles.unidade_titulo}>Unidade C</p>
                             <p>Endereço</p>
+                            <div className={styles.barraOculta}></div>
+                            <p className={styles.horario}>Horário</p>
                         </div>
                         </a></li>
                 </ul>
