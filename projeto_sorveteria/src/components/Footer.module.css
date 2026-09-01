@@ -1,17 +1,57 @@
-.footer{
-    margin: 0px;
-    padding: 10px;
-    background-color: #faf8f7c8;
-    color: rgb(0, 0, 0);
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+.footer {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    background-color: #2F1F0F;
+    color: #ffffff;
+    text-align: center;
+    font-family: "Plus Jakarta Sans", sans-serif;
 }
 
-.container{
+h3 {
+    font-weight: 600;
+    color: #FFFCEF;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    margin: auto;
-    width: 80%;
+    margin: 0 auto;
 }
 
-.navegacao a{
-    color: brown;
+.navegacao a {
+    color: #ffffff;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 14px;
+}
 
+.navegacao a:hover {
+    color: #ff7227;
+}
+
+.desenvolvedor {
+    font-weight: 200;
+    font-size: 16px;
+}
+
+.desenvolvedor>p>a {
+    color: #ff7227;
+    text-decoration: none;
+}
+
+@media (min-width: 768px) {
+    .navegacao {
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .navegacao a {
+        font-size: 16px;
+    }
 }

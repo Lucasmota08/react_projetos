@@ -3,6 +3,7 @@ import styles from './Inicio.module.css';
 import sorveteLoading from "../images/sorveteLoading.png";
 import sorveteColorido from "../images/sorveteLoaded_chocolate.png";
 import unidade from "../images/unidade.png";
+import fundo from "../images/fundo.png";
 
 import sorvete from "../images/images_3.png";
 import picole from "../images/images_2.png";
@@ -139,8 +140,16 @@ function Inicio() {
                         <FiAlignJustify className={navbarStyles.opacity0}/>
                     </div>
                 </div>
-                <h1>&#34;O melhor sorvete do país&#34;</h1>
-                <a href="">Peça já</a>
+                <div className={styles.firstCard}>
+                    <div className={styles.firstTexto}>
+                        <h1>O melhor sorvete <br /> do país</h1>
+                        <p className={styles.p1}>Sorvetes artesanais feitos com ingredientes premium, muito carinho e a textura perfeita para derreter na boca.</p>
+                        <a href="">Peça já</a>
+                    </div>
+                    <div className={styles.imgFundo}>
+                        <img src={fundo} alt="" />
+                    </div>
+                </div>
             </section>
 
             <section className={styles.unidades}>
