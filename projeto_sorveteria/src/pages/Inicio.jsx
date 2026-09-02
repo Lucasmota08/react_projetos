@@ -14,6 +14,9 @@ import { FiMapPin } from "react-icons/fi";
 import { FiShoppingBag } from "react-icons/fi";
 import { FiFeather } from "react-icons/fi";
 import { LuBuilding } from "react-icons/lu";
+import { IoIceCreamOutline } from "react-icons/io5";
+import { MdOutlineIcecream } from "react-icons/md"
+import { FaStar } from "react-icons/fa6";
 
 function Inicio() {
     const [isLoading, setIsLoading] = useState(true);
@@ -156,7 +159,7 @@ function Inicio() {
                 </div>
             </section>
 
-            {/* Onde encontrar? unidades lista_unidades unidade_titulo ver_unidades */}
+            {/* Onde encontrar?*/}
             <section className={styles.unidades}>
                 <FiMapPin className={styles.meuIcone} />
                 <p>Onde encontrar?</p>
@@ -195,30 +198,54 @@ function Inicio() {
             </section>
 
             <section className={styles.produtos}>
+                <IoIceCreamOutline  className={styles.meuIcone} />
                 <p>Conheça nossos produtos</p>
                 <ul className={styles.lista_produtos}>
-                    <li className={styles.sorvetes}>
-                        <p>Sorvetes</p>
-                        <img src={sorvete} alt="" /></li>
-                    <li  className={styles.picoles}>
-                        <p>Picolés</p>
-                        <img src={picole} alt="" /></li>
-                    <li  className={styles.açai}>
-                        <p>Açaí</p>
-                        <img src={açai} alt="" /></li>
+                    <li>
+                        <MdOutlineIcecream className={styles.produtoA}/>
+                        <p>Chocolate Belga</p>
+                        <div className={styles.valorProduto}>R$</div>
+                    </li>
+                    <li>
+                        <MdOutlineIcecream className={styles.produtoB}/>
+                        <p>Baunilha Bourbon</p>
+                        <div className={styles.valorProduto}>R$</div>
+                    </li>
+                    <li>
+                        <MdOutlineIcecream className={styles.produtoC}/>
+                        <p>Pistache Siciliano</p>
+                        <div className={styles.valorProduto}>R$</div>
+                    </li>
+                    <li>
+                        <MdOutlineIcecream className={styles.produtoD}/>
+                        <p>Morango</p>
+                        <div className={styles.valorProduto}>R$</div>
+                    </li>
                 </ul>
                 <button className={styles.ver_produtos}>
                     <p><strong>Ver todos os produtos</strong></p>
                 </button>
             </section>
 
-            <section className={styles.feedbacks}>
+            <section className={styles.feedback}>
                 <p>Feedbacks</p>
-                <div className={styles.feedback}>
-                    <p>a</p>
-                    <p></p>
-                </div>
-
+                <ul className={styles.feedbacks}>
+                    <li>
+                        <p className={styles.estrelas}><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></p>
+                        <i><p>"O melhor sorvete de pistache que já comi! A textura é incrivelmente cremosa e o sabor é autêntico. O ambiente da loja do centro é super acolhedor."</p></i>
+                        <p className={styles.nomeDoCliente}>- Gabriel Silva</p>
+                    </li>
+                    <li>
+                        <p className={styles.estrelas}><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></p>
+                        <i><p>"Sou cliente fiel! A casquinha artesanal faz toda a diferença. O sabor de chocolate belga é imperdível para quem ama cacau intenso."</p></i>
+                        <p className={styles.nomeDoCliente}>- Matheus Eduardo</p>
+                    </li>
+                    <li>
+                        <p className={styles.estrelas}><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></p>
+                        <i><p>"Ambiente agradável e atendimento excepcional. Adoro levar meus filhos no final de semana na loja do parque. Opções veganas excelentes."</p></i>
+                        <p className={styles.nomeDoCliente}>- Sophia Rodrigues</p>
+                    </li>
+                </ul>
             </section>
 
             <section className={styles.sobre}>
