@@ -6,15 +6,11 @@ import fundo from "../images/fundo.png";
 import sobre from "../images/sobre.png";
 
 import navbarStyles from '../components/Navbar.module.css';
-import { FiAlignJustify } from "react-icons/fi";
-import { FiMapPin } from "react-icons/fi";
-import { FiShoppingBag } from "react-icons/fi";
-import { FiFeather } from "react-icons/fi";
+import { FiAlignJustify, FiMapPin, FiShoppingBag, FiFeather } from "react-icons/fi";
 import { LuBuilding } from "react-icons/lu";
 import { IoIceCreamOutline } from "react-icons/io5";
-import { MdOutlineIcecream } from "react-icons/md"
-import { GiChocolateBar } from "react-icons/gi";
-import { GiStrawberry } from "react-icons/gi";
+import { MdOutlineIcecream } from "react-icons/md";
+import { GiChocolateBar, GiStrawberry } from "react-icons/gi";
 import { FaStar } from "react-icons/fa6";
 
 function Inicio() {
@@ -51,13 +47,36 @@ function Inicio() {
         };
     }, []);
 
+    // Observer para animar ícones e estrelas apenas no campo de visão
+    useEffect(() => {
+        if (isLoading) return;
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add(styles.visible);
+                    }
+                });
+            },
+            { threshold: 0.15 }
+        );
+
+        const animatedElements = document.querySelectorAll(
+            `.${styles.iconAnimation}, .${styles.productIconAnimation}, .${styles.estrelas}, .${styles.imgSobre}`
+        );
+        animatedElements.forEach((el) => observer.observe(el));
+
+        return () => observer.disconnect();
+    }, [isLoading]);
+
     // Tela de carregamento
     if (isLoading) {
         return (
             <div className={styles.loadingScreen}>
                 <div className={styles.loadingContainer}>
                     <div className={styles.sorveteLoader}>
-                        <img src={sorveteColorido} alt="Sorvete"
+                        <img src={sorveteColorido} alt="Sorvete" 
                             style={{ clipPath: `inset(${100 - progress}% 0 0 0)` }} />
                         <img src={sorveteLoading} alt="Sorvete Preto e Branco" />
                     </div>
@@ -81,7 +100,7 @@ function Inicio() {
             console.log("Menu aberto");
         }
     }
-
+     
     return (
         <div className={styles.inicio}>
 
@@ -89,7 +108,7 @@ function Inicio() {
             {isScrolled && (
                 <div className={navbarStyles.navbar}>
                     <div className={navbarStyles.container}>
-                        <FiAlignJustify onClick={showMenu} className={navbarStyles.menu} />
+                        <FiAlignJustify onClick={showMenu} className={navbarStyles.menu}/>
                         <div className={navbarStyles.meio}>
                             <div className={navbarStyles.Logo}>
                                 <img src="" alt="" />
@@ -105,14 +124,14 @@ function Inicio() {
                                 </ul>
                             </div>
                         </div>
-                        <FiAlignJustify className={navbarStyles.opacity0} />
+                        <FiAlignJustify className={navbarStyles.opacity0}/>
                     </div>
                 </div>
             )}
 
             {/*  menu de opções */}
             <div className={`${styles.showMenu} ${isActive ? styles.active : ""} ${isExiting ? styles.exiting : ""}`}>
-                <FiAlignJustify onClick={showMenu} className={styles.menuIcon} />
+                <FiAlignJustify onClick={showMenu} className={styles.menuIcon}/>
                 <ul>
                     <li className={navbarStyles.greenLi}><a href="">Peça já</a></li>
                     <li><a href="">Sobre nós</a></li>
@@ -160,11 +179,11 @@ function Inicio() {
 
             {/* Onde encontrar?*/}
             <section className={styles.unidades}>
-                <FiMapPin className={styles.meuIcone} />
+                <FiMapPin className={`${styles.meuIcone} ${styles.iconAnimation}`} />
                 <h2>Onde encontrar?</h2>
                 <ul className={styles.lista_unidades}>
                     <li><a href="">
-                        <FiShoppingBag className={styles.unidadeA} />
+                        <FiShoppingBag className={`${styles.unidadeA} ${styles.iconAnimation}`} />
                         <div className={styles.textoUnidade}>
                             <p className={styles.unidade_titulo}>Unidade A</p>
                             <p>Endereço</p>
@@ -173,7 +192,7 @@ function Inicio() {
                         </div>
                     </a></li>
                     <li><a href="">
-                        <LuBuilding className={styles.unidadeB} />
+                        <LuBuilding className={`${styles.unidadeB} ${styles.iconAnimation}`} />
                         <div className={styles.textoUnidade}>
                             <p className={styles.unidade_titulo}>Unidade B</p>
                             <p>Endereço</p>
@@ -182,7 +201,7 @@ function Inicio() {
                         </div>
                     </a></li>
                     <li><a href="">
-                        <FiFeather className={styles.unidadeC} />
+                        <FiFeather className={`${styles.unidadeC} ${styles.iconAnimation}`} />
                         <div className={styles.textoUnidade}>
                             <p className={styles.unidade_titulo}>Unidade C</p>
                             <p>Endereço</p>
@@ -196,27 +215,28 @@ function Inicio() {
                 </button>
             </section>
 
+            {/* Produtos */}
             <section className={styles.produtos}>
-                <IoIceCreamOutline className={styles.meuIcone} />
+                <IoIceCreamOutline className={`${styles.meuIcone} ${styles.iconAnimation}`} />
                 <h2>Conheça nossos produtos</h2>
                 <ul className={styles.lista_produtos}>
                     <li>
-                        <GiChocolateBar  className={styles.produtoA} />
+                        <GiChocolateBar className={`${styles.produtoA} ${styles.productIconAnimation}`} />
                         <p>Chocolate Belga</p>
                         <div className={styles.valorProduto}>R$</div>
                     </li>
                     <li>
-                        <MdOutlineIcecream className={styles.produtoB} />
+                        <MdOutlineIcecream className={`${styles.produtoB} ${styles.productIconAnimation}`} />
                         <p>Baunilha Bourbon</p>
                         <div className={styles.valorProduto}>R$</div>
                     </li>
                     <li>
-                        <MdOutlineIcecream className={styles.produtoC} />
+                        <MdOutlineIcecream className={`${styles.produtoC} ${styles.productIconAnimation}`} />
                         <p>Pistache Siciliano</p>
                         <div className={styles.valorProduto}>R$</div>
                     </li>
                     <li>
-                        <GiStrawberry  className={styles.produtoD} />
+                        <GiStrawberry className={`${styles.produtoD} ${styles.productIconAnimation}`} />
                         <p>Morango</p>
                         <div className={styles.valorProduto}>R$</div>
                     </li>
@@ -226,6 +246,7 @@ function Inicio() {
                 </button>
             </section>
 
+            {/* Feedbacks*/}
             <section className={styles.feedback}>
                 <h2>Feedbacks</h2>
                 <ul className={styles.feedbacks}>
@@ -247,12 +268,13 @@ function Inicio() {
                 </ul>
             </section>
 
+            {/* Sobre nós*/}
             <section className={styles.sobre}>
                 <h4>Sobre nós</h4>
                 <div className={styles.imgSobre}></div>
                 <div className={styles.sobreTexto}>
                     <h3>Sobre nós</h3>
-                    <p>História e descrição da sorveteria Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, at velit. Iste necessitatibus cum officia eum quas nisi, dolorum esse reiciendis ex amet est magni quasi similique eius nostrum impedit?</p>
+                    <p>História e descrição da sorveteria. Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, at velit. Iste necessitatibus cum officia eum quas nisi, dolorum esse reiciendis ex amet est magni quasi similique eius nostrum impedit?</p>
                     <button className={styles.ver_sobre}>
                         <p><strong>Saiba mais</strong></p>
                     </button>

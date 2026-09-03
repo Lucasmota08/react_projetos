@@ -45,6 +45,11 @@ h3 {
     text-decoration: none;
 }
 
+.desenvolvedor>p>a:hover {
+    color: #F0E499;
+    text-decoration: none;
+}
+
 @media (min-width: 768px) {
     .navegacao {
         flex-direction: row;

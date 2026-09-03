@@ -115,7 +115,6 @@
 }
 
 .firstCard {
-    animation: fadeInDown2 1s ease;
     background-color: #2F1F0F;
     background-image: linear-gradient(#d4966362, #d4966362), url(../images/fundo.png);
     background-position: center;
@@ -211,6 +210,40 @@
 
 .meuIcone {
     font-size: 30px;
+}
+
+.iconAnimation {
+    opacity: 0;
+}
+
+.iconAnimation.visible {
+    animation: fadeInDown2 1s ease forwards;
+}
+
+@keyframes rotateToNormal {
+    0% {
+        opacity: 0.3;
+        transform: rotate(-60deg) scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+    }
+}
+
+@keyframes rotateToInvert {
+    0% {
+        opacity: 0;
+        transform: rotate(0deg) scale(1);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(-6deg) scale(1);
+    }
+}
+
+.productIconAnimation.visible {
+    animation: fadeInDown2 0.6s ease forwards;
 }
 
 /* ========================================
@@ -414,11 +447,12 @@
 }
 
 .produtoC {
-    background-color: #4C001C;
+    background-color: #DCEDC8;
+    color: rgb(43, 43, 43)
 }
 
 .produtoD {
-    background-color: #473423;
+    background-color: #6D1230;
 }
 
 .valorProduto {
@@ -459,6 +493,20 @@
     box-sizing: border-box;
 }
 
+@keyframes starPop {
+    0% {
+        opacity: 0;
+        transform: scale(0.2) rotate(-30deg);
+    }
+    70% {
+        transform: scale(1.25) rotate(10deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
 .estrelas {
     color: #675F22;
     font-size: 20px;
@@ -466,6 +514,20 @@
     display: flex;
     gap: 4px;
 }
+
+.estrelas svg {
+    opacity: 0;
+}
+
+.estrelas.visible svg {
+    animation: starPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.estrelas.visible svg:nth-child(1) { animation-delay: 0.1s; }
+.estrelas.visible svg:nth-child(2) { animation-delay: 0.25s; }
+.estrelas.visible svg:nth-child(3) { animation-delay: 0.4s; }
+.estrelas.visible svg:nth-child(4) { animation-delay: 0.55s; }
+.estrelas.visible svg:nth-child(5) { animation-delay: 0.7s; }
 
 .sobre {
     display: flex;
@@ -477,6 +539,17 @@
     padding: 10px;
 }
 
+@keyframes parabolicDescent {
+    0% {
+        opacity: 0;
+        transform: translateX(-8vw) translateY(-12vh) rotate(-15deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) translateY(0) rotate(0deg);
+    }
+}
+
 .imgSobre {
     background-image: url(../images/sobre.png);
     background-position: center;
@@ -485,6 +558,11 @@
     border-radius: 12px;
     width: 80%;
     height: 200px;
+    opacity: 0;
+}
+
+.imgSobre.visible {
+    animation: parabolicDescent 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 /* ========================================
@@ -590,13 +668,13 @@
     }
 
     .firstTexto {
-        align-items: flex-start;
-        align-items: center;
+        align-items: start;
         flex: 1;
         max-width: 50%;
     }
 
     .firstTexto>h1 {
+        text-align: start;
         font-weight: 800;
         letter-spacing: -2px;
         color: #2F1F0F;
@@ -610,6 +688,7 @@
 
     .p1 {
         display: flex;
+        text-align: start;
         animation: fadeInDown2 1s ease;
         color: #2F1F0F;
     }
@@ -629,6 +708,7 @@
     }
 
     .imgFundo::before {
+        animation: rotateToInvert 1s ease forwards;
         content: '';
         position: absolute;
         width: 100%;
@@ -653,6 +733,14 @@
         object-fit: cover;
         border-radius: 20px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .productIconAnimation {
+        opacity: 1;
+    }
+
+    .productIconAnimation.visible {
+        animation: rotateToNormal 1.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
     }
 
     .feedback {
@@ -694,9 +782,17 @@
     .sobreTexto {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        gap: 40px;
-        margin-left:10vw
+        align-items: start;
+        gap: 20px;
+        margin-left: 5vw
+    }
+
+    .sobre p {
+        text-align: start;
+    }
+
+    .ver_sobre {
+        margin: 0px;
     }
 }
 
